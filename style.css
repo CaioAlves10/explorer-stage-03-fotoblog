@@ -11,7 +11,7 @@
 
 :root {
   font-size: 62.5%;
-  
+
   --gray-900: #202024;
   --gray-700: #323238;
   --gray-600: #3D3D3D;
@@ -21,7 +21,9 @@
   --white: #FFF;
 }
 
-html, body, input {
+html,
+body,
+input {
   font-family: "Mulish", sans-serif;
 }
 
@@ -33,10 +35,6 @@ body {
   background-color: var(--gray-100);
 }
 
-/* #app > * {
-  border: 1px solid red;
-} */
-
 #app {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
@@ -47,25 +45,30 @@ body {
 }
 
 .container {
-  padding: 1.6rem 3.2rem;
+  padding: 1.3rem 3.2rem;
   margin: 0 auto;
   width: 100%;
 }
 
 main {
   margin-bottom: 5.1rem;
-
   background-color: var(--gray-100);
 }
 
-header nav, nav ul {
+header nav,
+nav ul {
   display: flex;
   align-items: center;
   gap: 7.2rem;
 
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--gray-400);
+}
+
+ul li,
+.avatar:hover {
+  cursor: pointer;
 }
 
 ul li.active {
@@ -73,7 +76,12 @@ ul li.active {
 }
 
 .logo {
-  width: 4rem;
+  width: 3.8rem;
+  transition: all 200ms ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .avatar {
@@ -100,7 +108,7 @@ nav ul {
 
 .input-wrapper input {
   width: 100%;
-  padding: 1.6rem;
+  padding: 1.3rem;
 
   background-color: var(--gray-200);
   border-radius: 0.5rem;
@@ -145,8 +153,9 @@ main h1 {
 }
 
 .item img:hover {
-  filter: hue-rotate(7deg) contrast(100%) saturate(170%);
+  filter: hue-rotate(7deg) contrast(100%) saturate(150%);
   transform: scale(1.1) rotate(-2deg);
+  cursor: pointer;
 }
 
 .details {
@@ -177,7 +186,7 @@ main h1 {
 
 footer {
   position: fixed;
-  bottom:0;
+  bottom: 0;
   z-index: 1;
   margin: 0 auto;
 
@@ -215,12 +224,19 @@ footer {
     opacity: 0;
     transform: scale(0.7);
   }
+
   50% {
     transform: scale(1);
   }
 }
 
 /* Media Queries */
+
+@media(min-width: 1024px) {
+  .container {
+    padding: 1.6rem 5%;
+  }
+}
 
 @media(max-width: 890px) {
   :root {
@@ -239,7 +255,11 @@ footer {
     display: inline;
   }
 
-  form > div {
+  .search-icon:hover {
+    cursor: pointer;
+  }
+
+  form>div {
     display: none;
   }
 
@@ -251,7 +271,7 @@ footer {
   }
 }
 
-@media(max-width: 425px) {
+@media(max-width: 440px) {
   .gallery {
     grid-template-columns: repeat(1, 1fr);
   }
